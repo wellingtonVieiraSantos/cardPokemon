@@ -1,0 +1,121 @@
+*,
+::before,
+::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'VT323', monospace;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    border-bottom: 4px solid rgba(0, 0, 0, 0.9);
+    border-right: 4px solid rgba(0, 0, 0, 0.9);
+    box-shadow: 15px 15px 25px orangered;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(227, 227, 227, 0.1);
+    border-radius: 10px;
+}
+
+.img{
+    min-height: 150px;
+}
+
+img{
+    width: 200px;
+}
+
+.description{
+    min-height: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1{
+    font-size: 37px;
+    margin: 0 0 30px 20px;
+}
+
+.types{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.type{
+    width: 35%;
+    height: 40px;
+    border-radius: 20px;
+    border: 3px solid rgba(172, 172, 172, 0.614);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: orangered;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.type:nth-child(2){
+    background-color: rgb(45, 45, 214);
+}
+
+.wrapper::after{
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    width: 600px;
+    height: 100%;
+    background-image: url(../img/charizard.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    scale: 0;
+}
+
+.wrapper:hover img{
+    animation: diminui .2s ease-in;
+    scale: 0;
+    transform: translateY(600px);
+}
+
+.wrapper:hover::after{
+    min-height: 600px;
+    animation: cresce .6s ease-out;
+    scale: .8;
+    transform: translateY(-300px);
+}
+
+@keyframes cresce {
+    0%{ 
+        scale: .2; 
+        transform: translateY(400px);
+    }
+    100%{
+        scale: .8; 
+        transform: translateY(-300px);
+    }
+}
+@keyframes diminui {
+    0%{ 
+        scale: 1; 
+        transform: translateY(50px);
+    }
+    100%{
+        scale: 0; 
+        transform: translateY(600px);
+    }
+}
