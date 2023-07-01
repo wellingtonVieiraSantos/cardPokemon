@@ -82,34 +82,35 @@ h1{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    scale: 0;
+    opacity: 0;
 }
 
 .wrapper:hover img, .wrapper.hovered img{
     animation: diminui .1s linear;
-    scale: 0;
+    opacity: 0;
 }
 
 .wrapper:hover .pokeGiga, .wrapper.hovered .pokeGiga{
     animation: cresce .4s linear;
-    scale: 1;
+    opacity: 1;
     transform: scale(1) translateY(-50px);
 }
 
 @keyframes cresce {
     0%{ 
         transform: scale(0) translateY(100px) ;
-
+        opacity: 0;
     }
     100%{
         transform: scale(1) translateY(-50px);
+        opacity: 1;
     }
 }
 @keyframes diminui {
     0%{ 
-        transform: scale(1); 
+        opacity: 1; 
     }
     100%{
-        transform: scale(0); 
+        opacity: 0;
     }
 }
