@@ -1,4 +1,5 @@
 const api = 'https://pokeapi.co/api/v2/pokemon/'
+const wrapper = document.querySelector('.wrapper')
 
 let id = 1
 const pokemonMaximo = 649
@@ -93,7 +94,6 @@ const createHTML = (data) => {
     const img = document.querySelector('.pokemonImg')
     const pokeGiga = document.querySelector('.pokeGiga')
     const nome = document.querySelector('.name')
-    const wrapper = document.querySelector('.wrapper')
     const types = document.querySelector('.types')
 
     img.setAttribute('src', data.sprites.front_default)
@@ -121,5 +121,13 @@ const createHTML = (data) => {
 const normalizeName = (name) =>{
     return name[0].toUpperCase() + name.slice(1)
 }
+
+wrapper.addEventListener('touchstart', function() {
+  wrapper.classList.add('hovered');
+});
+
+wrapper.addEventListener('touchend', function() {
+  wrapper.classList.remove('hovered');
+});
 
 //futura feature: status do pokemon no verso do card ao clicar

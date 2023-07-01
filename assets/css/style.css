@@ -26,7 +26,6 @@ body{
     align-items: center;
     background-color: rgba(227, 227, 227, 0.1);
     border-radius: 10px;
-    overflow: visible;
 }
 
 .img{
@@ -86,12 +85,12 @@ h1{
     scale: 0;
 }
 
-.wrapper:hover img{
+.wrapper:hover img, .wrapper.hovered img{
     animation: diminui .1s linear;
     scale: 0;
 }
 
-.wrapper:hover .pokeGiga{
+.wrapper:hover .pokeGiga, .wrapper.hovered .pokeGiga{
     animation: cresce .4s linear;
     scale: 1;
     transform: scale(1) translateY(-50px);
