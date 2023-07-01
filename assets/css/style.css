@@ -38,7 +38,7 @@ img{
 }
 
 .description{
-    min-height: 150px;
+    min-height: 200px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -76,46 +76,41 @@ h1{
 .wrapper::after{
     content: '';
     position: absolute;
-    bottom: -100px;
+    bottom: 0;
     width: 600px;
     height: 100%;
     background-image: url(../img/charizard.gif);
-    background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
     scale: 0;
 }
 
 .wrapper:hover img{
-    animation: diminui .2s ease-in;
+    animation: diminui .1s linear;
     scale: 0;
-    transform: translateY(600px);
 }
 
 .wrapper:hover::after{
     min-height: 600px;
-    animation: cresce .6s ease-out;
+    animation: cresce .4s linear;
     scale: .8;
-    transform: translateY(-300px);
+    transform: translateY(-150px);
 }
 
 @keyframes cresce {
     0%{ 
-        scale: .2; 
-        transform: translateY(400px);
+        scale: .1; 
+        transform: translateY(0);
     }
     100%{
         scale: .8; 
-        transform: translateY(-300px);
+        transform: translateY(-150px);
     }
 }
 @keyframes diminui {
     0%{ 
         scale: 1; 
-        transform: translateY(50px);
     }
     100%{
         scale: 0; 
-        transform: translateY(600px);
     }
 }
