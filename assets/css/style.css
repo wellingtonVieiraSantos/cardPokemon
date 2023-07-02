@@ -90,6 +90,10 @@ h1{
     opacity: 0;
 }
 
+.wrapper:not(.hovered) .pokeGiga{
+    opacity: 0;
+}
+
 .wrapper:hover .pokeGiga, .wrapper.hovered .pokeGiga{
     animation: cresce .4s linear;
     opacity: 1;

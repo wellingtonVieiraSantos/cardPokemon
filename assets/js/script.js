@@ -1,7 +1,7 @@
 const api = 'https://pokeapi.co/api/v2/pokemon/'
 const wrapper = document.querySelector('.wrapper')
 
-let id = 1
+let id = 230
 const pokemonMaximo = 649
 
 const pokemonTypes = {
